@@ -136,6 +136,17 @@ self.fetcher.authenticate(username, password: password) { clientID, clientSecret
 
 ## UIImage
 
+#### Resizing
+
+You can resize an image by providing a new height, width or scale rate.
+
+```swift
+let image = UIImage()
+let scaledImage = image.resized(by: 0.5) // CGInterpolationQuality defaults to .medium
+let widthImage = image.resized(toWidth: 300) // scales up or down as needed
+let heightImage = image.resized(toHeight: 300)
+```
+
 #### Centered frame
 
 ```swift
@@ -174,6 +185,21 @@ Create images using `rgba(255,255,255,1.0)` values.
 ```swift
 let window = self.applicationWindow()
 ```
+
+## Keyboard Aware Accessory View
+
+This keyboard aware accessory view is part of your view(controller) and moves with the keyboard.
+
+#### KeyboardAwareAccessoryViewDelegate
+
+```swift
+var keyboardAwareInputView: KeyboardAwareInputAccessoryView { get }
+```
+
+```swift
+inputView(_:shouldUpdatePosition:)
+```
+
 
 ## Installation
 
